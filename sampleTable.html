@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Sample Document</title>
+    </head>
+    <body>
+        <table border="1" cellspacing="1" cellpadding="10" title="TABLE">
+            <tr>
+                <th></th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+                <th>목</th>
+                <th>금</th>
+                <th>토</th>
+            </tr>
+            <tr>
+                <th>1교시</hd>
+                <td colspan="3">예습</td> <!-- 가로병합 -->
+                <td rowspan="3">보충</td> <!-- 세로병합 -->
+                <td>2행 4열</td>
+                <td rowspan="3">프론트엔드<br>프로그래밍</td>
+            </tr>
+            <tr>
+                <th>2교시</th>
+                <td>3행 2열</td>
+                <td rowspan="2">프론트엔드<br>프로그래밍</td>
+                <td>3행 4열</td>
+                <td>3행 5열</td>
+            </tr>
+            <tr>
+                <th>3교시</th>
+                <td>4행 2열</td>
+                <td>4행 3열</td>
+                <td>4행 4열</td>
+            </tr>
+        </table>
+    
+        <table border="1" cellspacing="1" cellpadding="10" title="TABLE">
+            <thead>
+                <tr>
+                    <th>구분</th>
+                    <th>금액</th>
+                </tr>
+            </thead>
+            <tfoot> <!--푸터는 바디보다 먼저 사용되어야 한다 -->
+                <tr>
+                    <th>합계</th>
+                    <td>250,000</td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <th>숙박비</th>
+                    <td>100,000</td>
+                </tr>
+                <tr>
+                    <th>교통비</th>
+                    <td>150,000</td>
+                </tr>
+            </tbody>
+
+        </table>
+    
+        
+    </body>
+</html>
