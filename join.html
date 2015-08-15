@@ -14,14 +14,14 @@
                 <legend>필수 입력 정보</legend>
                 <table>
                     <tr>
-                        <td>
+                        <td width="150">
                             <label for="email">이메일</label>
                         </td>
                         <td>
                             <input type="text" name="email" id="email" size="40">
                         </td>
                     <tr>
-                        <td>
+                        <td width="150">
                             <label for="password">비밀번호</label>
                         </td>
                         <td>
@@ -29,7 +29,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td width="150">
                             <label for="passwordConfirm">비밀번호 확인</label>
                         </td>
                         <td>
@@ -41,19 +41,31 @@
             <br><br>
             <fieldset>
                 <legend>선택 입력 정보</legend>
-                <p>전화번호</p>
-                <p>                        
-                    <select name="phone1">
-                        <option value="010">010</option>
-                        <option value="02">02</option>
-                        <option value="031">031</option>
-                        <option value="070">070</option>
-                    </select>
-                <input type="tel" name="phone2" size="6" maxlength="4">
-                <input type="tel" name="phone3" size="6" maxlength="4"> </p>
-                    
-                <p>생년월일</p>
-                <p><input type="date" name="birth"></p>
+                <table>
+                    <tr>
+                        <td width="150">
+                            <label for="phone1">전화번호</label>
+                        </td>
+                        <td>
+                            <select name="phone1" id="phone1">
+                                <option value="010">010</option>
+                                <option value="02">02</option>
+                                <option value="031">031</option>
+                                <option value="070">070</option>
+                            </select>
+                            <input type="tel" name="phone2" id="phone2" size="6" maxlength="4">
+                            <input type="tel" name="phone3" id="phone3" size="6" maxlength="4">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="150">
+                            <label for="birth">생년월일</label>
+                        </td>
+                        <td>
+                            <input type="date" name="birth" id="birth">
+                        </td>
+                    </tr>
+                </table>
             </fieldset>
             <button type="submit">가입</button>
             <button type="reset">취소</button>
