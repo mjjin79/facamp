@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Sample Document</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <h1>회원가입</h1>
@@ -10,29 +11,29 @@
         <form action="index.html" method="post">
             <fieldset>
                 <legend>필수 입력 정보</legend>
-                <table cellpadding="5">
+                <table>
                     <tr>
                         <td><p>
-                            <label for="email">이메일</label></td> 
-                        <td colspan="3"><input type="text" name="email" id="email" size="40"></p>
+                            <label for="email">이메일</label></p></td> 
+                        <td colspan="3"><p><input type="text" name="email" id="email" size="40"></p>
                         </td>
                     </tr>
                     <tr>
                         <td><p>
-                            <label for="password">비밀번호</label></td>
-                        <td><input type="password" name="password" id="password" size="40"></p></td>
-                        <td><p>비밀번호 확인</td>
-                        <td><input type="password" name="password" size="40"></p></td>
+                            <label for="password">비밀번호</label></p></td>
+                        <td><p><input type="password" name="password" id="password" size="40"></p></td>
+                        <td><p>비밀번호 확인</p></td>
+                        <td><p><input type="password" name="password" size="40"></p></td>
                     </tr>
                 </table>
             </fieldset>
             <br><br>
             <fieldset>
                 <legend>선택 입력 정보</legend>
-                <table cellpadding="5">
+                <table>
                     <tr>
                         <td><p>전화번호</p></td>
-                        <p><td>                            
+                        <td><p>                        
                             <select name="phone1">
                                 <option value="010">010</option>
                                 <option value="02">02</option>
@@ -43,8 +44,8 @@
                             <input type="text" name="phone3" size="6" maxlength="4"> </p></td>
                     </tr>
                     <tr>
-                        <td><p>생년월일</td>
-                        <td><input type="date" name="birth"></td>
+                        <td><p>생년월일</p></td>
+                        <td><p><input type="date" name="birth"></p></td>
                     </tr>
                 </table>
             </fieldset>

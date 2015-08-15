@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+/*
+p {
+    color: blue;
+    text-decoration: underline;
+}
+*/
+button {
+    color: aquamarine;
+    border-bottom-color: aqua;
+}
+strong {
+    color: red;
+/*    font-size: 20px;*/
+}
+legend {
+    color: aqua;
+    font-size: 25px;
+    background-color: black;
+}
+
+.front {
+    color: green;
+}
+#end {
+    font-weight: bold;
+}
+
+a:link {
+    color: #ff0000;
+}
+a:visited {
+    color: darkgray;
+}
+a:hover {
+    color: red;
+}
+a:activer {
+    color: yellowgreen;
+}
