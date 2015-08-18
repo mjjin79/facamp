@@ -1,0 +1,7 @@
+@charset utf-8;
+div { color: aqua; }
+span { color: blue; }
+span { color: gray; }
+
+#id { color: green; }
+.class { color: orange; }
