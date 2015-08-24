@@ -14,6 +14,28 @@ body {
     background-color: #000;
     z-index: 10;
 }
+.gnb_menu {
+    display: block;
+    width: 118px;
+    font-weight: bold;
+    line-height: 70px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;    
+}
+.top_menu {
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    list-style: none;   
+}
+.top_menu:after {
+    clear: both;
+    display: block;
+    content: '';
+}
+
+
 .tab_menu {
     padding-left: 0px;
     list-style: none;
