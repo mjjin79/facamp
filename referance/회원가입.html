@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://bigstone87.github.io/fecamp/hw_join.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta property="og:image" content="http://image.meetjul.com/data/20150814/1439528092_9bfc08653a604380b534a09fed2c504e.jpg">
+		<meta property="og:image" url="http://meetjul.com/community/contentView.jul/00000000000000000039">
+		<meta name="subject" content="html+CSS기초">
+		<meta name="title" content="회원가입">
+		<meta name="author" content="밑줊">
+		<meta name="keywords">
+		<meta name="viewport" content="width=device-width, initial-scale=2.0, maximun-scale=2.0, minimum-scale=2.0, user-scale=yes">
+		<title>회원가입</title>
+		<link rel="stylesheet" type="text/css" href="./회원가입_files/style.css">
+</head>
+<body>
+	<h1>회원가입</h1>
+	<form action="http://bigstone87.github.io/fecamp/sample.html" method="post">
+		<fieldset>
+			<legend><span>필수 입력 정보</span></legend>
+			<p>
+				</p><table border="0" cellpadding="5">
+					<tbody><tr>
+						<td><label for="emailid">이메일</label></td>
+						<td>
+							<input id="emailid" type="email" name="email" title="이메일을 정확히 입력해주세요">@
+							<select name="emailid">
+								<option>이메일을 선택하세요.</option>
+								<option value="naver.com">naver.com</option>
+								<option value="hanmail.net">hanmail.net</option>
+								<option value="gmail.com">gmail.com</option>
+								<option value="직접입력">직접입력</option>
+							</select>
+						</td>
+					</tr><tr>
+						<td><label for="passwordid">비밀번호</label></td>
+						<td><input id="passwordid" type="password" name="password" size="42"></td>
+					</tr>
+					<tr>
+						<td><label for="password2id">비밀번호 확인</label></td>
+						<td><input id="password2id" type="password" name="password" size="42"></td>
+					</tr>
+				</tbody></table>
+			<p></p>
+		</fieldset><br>
+		<fieldset>
+			<legend>선택 입력 사항</legend>
+			<p>
+				</p><table border="0" cellpadding="5">
+					<tbody><tr>
+						<td><label for="phoneid">연락처</label></td>
+						<td>
+							<select id="phoneid" name="phone1">
+								<option value="010">010</option>
+								<option value="02">02</option>
+								<option value="031">031</option>
+								<option value="070">070</option>
+							</select>
+							<input type="tel" name="phone2" size="6" maxlength="4">
+							<input type="tel" name="phone3" size="6" maxlength="4">
+						</td>
+					</tr>
+					<tr>
+						<td><label for="birthdayid">생년월일</label></td>
+						<td>
+							<input id="birthdayid" type="date" name="birth">
+						</td>
+					</tr>
+				</tbody></table>
+			<p></p>
+		</fieldset>
+		<button type="submit" title="가입">가입</button>
+		<button type="reset">취소</button>
+	</form>
+</body></html>

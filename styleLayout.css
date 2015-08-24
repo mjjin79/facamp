@@ -1,0 +1,118 @@
+@charset "utf-8";
+html{
+}
+body {
+    margin: 0px;
+    padding-top: 70px;
+}
+/*레이아웃 
+absolute; 브라우저 절대값. 브라우저 기준으로 정해진 좌표에 위치한다. 스크롤이 움직이면 정해진 위치에서 움직이지 않기 때문에 보이지 않는다.
+fixed; 브라우저에 위치 고정. 스크롤을 움직여도 항상 같은 위치에 보여진다.
+relative; 상대적인 좌표값. 브라우저 기준이 아니라 자신이 속해 있는 부모요소의 위치를 기준으로 좌표를 지정한다.
+*/
+.gnb {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 70px;
+    background-color: #000;
+    z-index: 10;
+}
+.layer1{
+    position: fixed;
+    left: 30px;
+    top: 30px;
+    /*x는 가로축 y는 세로축 z는 앞뒤.
+    부모의 z-index가 낮으면 자식의 값이 높아도 레이어가 앞으로 가지 못한다. */
+    z-index: 4;
+    background-color: #fc0;
+    white-space: nowrap;
+}
+.layer2{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    z-index: 3;
+    background-color: #fc0;
+    white-space: nowrap;
+}
+.go_top{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-color: aqua;
+}
+
+
+/*박스*/
+.wrap:after/*가상선택자*/{
+    clear: both;
+    display: block;
+    content: '';
+/*    color: #f00;*/
+}
+.wrap {
+    width: 600px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.box1 {
+    float: left;
+    position: relative;
+    z-index: 1;
+    width: 300px;
+    height: 300px;
+    padding: 30px;
+    border: 10px solid #119;
+    background-color: aqua;
+    box-sizing: border-box;
+}
+.box2 {
+    float: right;
+    position: relative;
+    z-index: 1; /* 같은 값이라면 나중에 나온 요소가 위로 간다.  */
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    border: 10px solid #909;
+    background-color: blueviolet;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

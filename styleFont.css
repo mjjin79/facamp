@@ -1,0 +1,81 @@
+@charset "utf-8";
+html{
+}
+div {
+    font-style: normal; 
+    font-weight: bold;
+    font-size: 20px;
+    font-family: '나눔고딕', nanumgothic, '맑은고딕', 'malgun gothic', '돋움', dotum, sans-serif, serif;
+    line-height: 1.5;
+/*    width: 300px;*/
+/*    height: 300px;*/
+/*    background-color: gray;*/
+}
+p {
+/*    위의 div의 내용을 줄여서 축약할 수 있지만 추천하지는 않는다
+    축약할 경우 선언되지 않은 스타일은 기본값으로 변경된다.
+    특정 문자에 대해 다시 선언을 하려면 축약이 아니라 각각 속성으로 선언하는게 좋다*/
+/*    font: italic bold 15px/20px '나눔고딕';*/
+/*          폰트 스타일  글자크기/line-height 글꼴*/
+    
+    
+    text-align: right;
+    font-size: 1.5em;
+    text-indent: 10px;
+/*    text-indent는 수치로 정의*/
+}
+span {
+    text-align: right;
+}
+strong {
+    text-align: center;
+}
+.nanum {
+    text-decoration: overline underline line-through;
+}
+.arial {
+}
+
+.front {
+}
+
+#end {
+    text-align: center;
+    font-size: 1.5rem
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

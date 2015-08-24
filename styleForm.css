@@ -14,20 +14,24 @@ body {
     line-height: 1.5em;
     color: #545454;
     background-color: #ffffff;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+/*    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);*/
 }
 
+/*
 p {
     color: blue;
     text-decoration: underline;
 }
+*/
+/*
 button {
-    color: black;
-    border-bottom-color: gray;
+    color: aquamarine;
+    border-bottom-color: aqua;
 }
+*/
 strong {
     color: red;
-    font-size: 20px;
+/*    font-size: 20px;*/
 }
 legend {
     color: aqua;
@@ -43,16 +47,22 @@ legend {
 }
 #end { background-color: rgba(0,100,0,1); }
 
+/*
 a:link { color: #ff0000; }
 a:visited { color: darkgray; }
+*/
 a:hover { color: rgba(255,0,0,0.5); }
+/*
 a:activer { color: yellowgreen; }
+*/
 input:focus { background-color: moccasin; }
 table{
     align-content: center;
     align-items: center;
+/*
     margin-left: auto;
     margin-right: auto;
+*/
 }
 
 /*Text Styles*/

@@ -1,0 +1,112 @@
+@charset "utf-8";
+html{
+}
+/*
+.wrap:before{
+    content: ':before에 보여지는 내용입니다.';
+    color: #00f;
+}
+*/
+.wrap {
+    width: 600px;
+    margin: 0 auto;
+}
+.wrap:after/*가상선택자*/{
+    clear: both;
+    display: block;
+    content: '';
+/*    color: #f00;*/
+}
+.box {
+    width: 300px;
+    height: 300px;
+    margin: 30px;
+    padding: 50px;
+    border: 50px solid #090;
+/*  위 보더 적용은 원래 아래와 같이 나누어 사용할 수 있다.
+    border-width: 20px;
+    border-style: solid;
+    border-color: #090;
+*/
+    background-color: #999;
+}
+.boxquiz1 {
+    float: left;
+    width: 300px;
+    height: 300px;
+    padding: 30px;
+/*    박스를 가운데 위치하려면 마진 오토를 적용한다. 위, 아래는 나중에 유지보수 시 잘못 계산하는것을 방지하기 위해 0으로 지정해준다. 오토와 유저뷰에 차이는 없다
+    margin: 0 auto;
+*/
+    border: 10px solid #119;
+    background-color: aqua;
+/*  margin, padding과 같이 적용하면 아래 박스와 같은 크기로 맞추기 위해 계산을 해야 하지만 box-sizin를 사용하면 width와 heiht의 값으로 박스 사이즈를 맞춰준다. */
+    box-sizing: border-box;
+}
+.boxquiz2 {
+/*    이전 float요소에 영향을 받지 않기위해 clear를 사용한다. 위의 float이 left이면 clear도 left로 해주어야 하고 어떤것이든 clear하려면 both를 사용한다.
+    clear: left;
+ */
+    float: left;
+    width: 300px;
+    height: 300px;
+/*
+    마진은 위, 오른쪽, 아래, 왼쪽 순서로 맨아래처럼 지정할 수 있다.
+    이 형식은 패딩 보더에도 적용할 수 있다.
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin: 20px 20px 20px 20px;
+    
+    margin: 20px 50px 10px; 형식으로 쓰면 위(20), 오른쪽(50), 아래(10), 왼쪽(50)으로 적용된다. margin: 10px 40px; 로 쓰면 10, 40, 10, 40으로 적용된다.
+    
+    padding: 20px;
+    padding-left: 50px;
+    형식으로 전체 적용을 하고 왼쪽만 다시 적용할 수도 있다.
+*/
+    padding: 20px;
+/*    border: 50px solid #909;*/
+    border-top: 5px solid #909;
+    border-right: 50px solid;
+    border-bottom: 15px solid;
+    border-left: 25px solid;
+    background-color: blueviolet;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
