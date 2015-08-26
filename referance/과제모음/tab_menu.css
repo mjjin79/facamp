@@ -1,0 +1,419 @@
+/*common*/
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+em {
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/*common*/
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: '나눔고딕', 'nanumhothic', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.tab_list > div + div {
+    margin-top: 60px;
+}
+
+
+/*네이버1 탭*/
+
+.naver1_tab {
+    background: url(http://img.shop.naver.net/front/simple/normal/sp_hr_v2.gif) repeat-x 0 -50px;
+    height: 31px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    font-family: '돋움', dotum, applegothic, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.naver1.tab_menu {
+    width: 100%;
+    font-size: 12px;
+}
+
+.naver1.tab_menu li {
+    float: left;
+    margin-left: -1px;
+}
+
+.naver1.tab_menu li.on {
+    background: url(http://img.shop.naver.net/front/simple/normal/sp_hr_v2.gif) repeat-x 0 -200px;
+    font-weight: bold;
+}
+
+.naver1.tab_menu li a {
+    display: inline-block;
+    line-height: 32px;
+    color: #fff;
+    background: url(http://img.shop.naver.net/front/simple/normal/sp_hr_v2.gif) no-repeat 0 -150px;
+}
+
+.naver1.tab_menu li a span {
+    display: inline-block;
+    padding: 0 21px 0 20px;
+    height: 31px;
+    background: url(http://img.shop.naver.net/front/simple/normal/sp_hr_v2.gif) no-repeat 100% -150px;
+}
+
+.naver1_tab .top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 31px;
+    line-height: 31px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 9px;
+    font-family: tahoma;
+    background: url(http://img.shop.naver.net/storefarm/front/simple/normal/sp_skin_v8.gif) no-repeat -140px -580px;
+    color: #fff;
+}
+
+
+/*네이버1 탭*/
+
+
+/*쿠팡탭*/
+
+.coupang.tab_menu:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.coupang.tab_menu {
+    font-family: '나눔고딕', 'nanumhothic', sans-serif;
+    font-weight: bold;
+    position: relative;
+    list-style-type: none;
+    font-size: 16px;
+    padding: 0;
+    border-bottom: 2px solid #555;
+    padding-left: 1px;
+}
+
+.coupang.tab_menu li {
+    float: left;
+    margin-left: -1px;
+    position: relative;
+}
+
+.coupang.tab_menu li a {
+    width: 118px;
+    height: 45px;
+    line-height: 45px;
+    display: block;
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    color: #555;
+    text-align: center;
+}
+
+.coupang.tab_menu li a.essential {
+    width: 158px;
+}
+
+.coupang.tab_menu li:last-of-type a {
+    border-right: 1px solid #ccc;
+}
+
+.coupang.tab_menu li a:active,
+.coupang.tab_menu li a:hover {
+    background-color: #555;
+    color: #fff;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+
+
+/*쿠팡탭*/
+
+
+/*네이버2탭*/
+
+.naver2_tab {
+    height: 49px;
+    border-top: 2px solid #0f2c53;
+}
+
+.naver2_tab .inner {
+    position: relative;
+    height: 48px;
+    border: 1px solid #dedfe0;
+    border-top: 0;
+    background-color: #f1f2f4;
+    font-family: 돋움, Dotum, Helvetica, 'Apple SD Gothic Neo', sans-serif;
+    font-size: 12px;
+}
+
+.naver2.tab_menu {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.naver2.tab_menu li {
+    position: relative;
+    float: left;
+    width: 156px;
+    height: 48px;
+    margin-left: -1px;
+    border-left: 1px solid #dededf;
+    border-right: 1px solid #dededf;
+    text-align: center;
+}
+
+.naver2.tab_menu li em {
+    margin-left: 5px;
+}
+
+.naver2.tab_menu li.on em {
+    font-weight: bold;
+    color: #fe5449;
+}
+
+.naver2.tab_menu li.on {
+    height: 48px;
+    border-color: #0a1f3e;
+    border-bottom: 1px solid #0a1f3e;
+    background-color: #0f2c53;
+    z-index: 10;
+}
+
+.naver2.tab_menu li.on strong {
+    color: #fff;
+    font-weight: bold;
+}
+
+.naver2.tab_menu li a {
+    display: block;
+    height: 13px;
+    padding: 17px 0 18px;
+    line-height: 15px;
+    color: #666;
+}
+
+
+/*네이버2탭*/
+
+
+/*티켓몬스터 탭*/
+
+.ticketmonster_tab {
+    position: relative;
+    /*    z-index: 10;*/
+    height: 44px;
+    border-top: 2px solid #3d4756;
+    background: #505a69;
+}
+
+.ticketmonster_tab .tab_menu {
+    font-family: 돋움, dotum, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.ticketmonster_tab .tab_menu li {
+    float: left;
+    border-right: 1px solid #3d4756;
+}
+
+.ticketmonster_tab .tab_menu li:first-of-type {
+    border-left: 1px solid #3d4756;
+}
+
+.ticketmonster_tab .tab_menu li.selected:first-of-type {
+    border-left-color: #cfcfcf;
+}
+
+.ticketmonster_tab .tab_menu li a {
+    display: block;
+    position: relative;
+    min-width: 90px;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.ticketmonster_tab .tab_menu li.selected a {
+    background: #fff;
+    color: #505a69;
+}
+
+.ticketmonster_tab .tab_menu li a span {}
+
+.ticketmonster_tab .tab_menu li a em {}
+
+.ticketmonster_tab .tab_menu li.selected a em {}
+
+
+/*티켓몬스터 탭*/
+
+.ticketmonster_tab .sns_menu {
+    float: right;
+    margin: 6px 20px 0 0;
+}
+
+.ticketmonster_tab .sns_menu li {
+    float: left;
+    width: 32px;
+    height: 32px;
+    margin-left: 5px;
+}
+
+.ticketmonster_tab .sns_menu li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(http://img2.tmon.kr/static/img/sp_deal_intro.png?v=1439436177 ) no-repeat -760px 0;
+    text-indent: -9999px;
+}
+
+.ticketmonster_tab .sns_menu li a.facebook {
+    background-position: -795px 0;
+}
+
+.ticketmonster_tab .sns_menu li a.twitter {
+    background-position: -830px 0;
+}
+
+
+/*티켓몬스터 탭 */
+
+
+/*네이버영화 탭*/
+
+.naver_movie_tab .tab_menu {
+    display: block;
+    overflow: hidden;
+    border-top: 2px solid #1f2026;
+    background: url(http://static.naver.net/movie/2012/06/sub_tab_bg.gif) repeat-x 0 100%;
+}
+
+.naver_movie_tab .tab_menu li {
+    display: block;
+    float: left;
+    height: 38px;
+}
+
+.naver_movie_tab .tab_menu li a {
+    display: block;
+    width: 90px;
+    height: 37px;
+    background: url(http://static.naver.net/movie/2012/06/tab_bg_bg2.png) no-repeat -9999px -9999px;
+}
+
+.naver_movie_tab .tab_menu li a.tab01_on {
+    width: 90px;
+    background-position: 0 -44px;
+    border-bottom: 1px solid #656565;
+}
+
+.naver_movie_tab .tab_menu li a.tab01_off {
+       width: 90px;
+    background-position: 0 -2px;
+    border-bottom: 1px solid #c7c7c9;
+}
+
+.naver_movie_tab .tab_menu li a.tab02_on {
+   width: 93px;
+    margin-left: -1px;
+    background-position: -89px -44px;
+    border-bottom: 1px solid #656565;
+}
+
+.naver_movie_tab .tab_menu li a.tab02_off {
+        width: 92px;
+    background-position: -90px -2px;
+    border-bottom: 1px solid #c7c7c9;
+}
+
+.naver_movie_tab .tab_menu li a.tab03_on {
+   width: 91px;
+    margin-left: -1px;
+    background-position: -181px -44px;
+    border-bottom: 1px solid #656565;
+}
+
+.naver_movie_tab .tab_menu li a.tab03_off {
+      width: 90px;
+    background-position: -182px -2px;
+    border-bottom: 1px solid #c7c7c9;
+}
+.naver_movie_tab .tab_menu li a.tab04_on {
+    width: 90px;
+    margin-left: -1px;
+    background-position: -271px -44px;
+    border-bottom: 1px solid #656565;
+}
+
+.naver_movie_tab .tab_menu li a.tab04_off {
+    width: 89px;
+    background-position: -272px -2px;
+    border-bottom: 1px solid #c7c7c9;
+}
+
+.naver_movie_tab .tab_menu li a.tab05_on {
+    width: 89px;
+    background-position: -272px -2px;
+    border-bottom: 1px solid #c7c7c9;
+}
+
+.naver_movie_tab .tab_menu li a.tab05_off {
+  width: 89px;
+    background-position: -361px -2px;
+    border-bottom: 1px solid #c7c7c9;
+}
+
+.naver_movie_tab .tab_menu li a.tab06_on {
+        width: 127px;
+    margin-left: -1px;
+    background-position: -538px -44px;
+    border-bottom: 1px solid #656565;
+}
+
+.naver_movie_tab .tab_menu li a.tab06_off {
+   width: 126px;
+    background-position: -539px -2px;
+    border-bottom: 1px solid #c7c7c9;
+}
+.naver_movie_tab .tab_menu li a em {
+    display: block;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+
+/*네이버영화 탭*/

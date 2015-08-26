@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+body {
+    margin: 0;
+    padding: 50px;
+}
+
+.tab_menu {
+    border: 1px solid #797979;
+    background-color: #939393;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.tab_menu:after {
+    clear: both;
+    display: block;
+    content: '';
+}
+
+.tab_menu .li1 {
+    float: left;    
+    position: relative;
+    margin-left: -1px;
+    border-left: 1px solid #939393;
+    border-left-color: #797979;
+    border-right: 1px solid #939393;
+    border-right-color: #797979;
+    color: #555;
+}
+
+.tab_menu .li2 {
+    float: right;    
+/*    position: relative;*/
+    background-color: #707070;
+    border-left: 1px solid #939393;
+    border-left-color: #797979;
+    color: #555;
+}
+
+.tab_menu a {
+    display: block;
+    width: 80px;
+    line-height: 30px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.tab_menu li:hover a {
+    background-color: #525252;
+    color: #fff;
+}
+
+.tab_menu li:hover {
+    z-index: 1;
+    border-left-color: #838383;
+/*    border-bottom-color: #525252;*/
+/*    margin-left: 0px;*/
+/*    margin-right: -1px;*/
+}
+
+.tab_menu .size_100 {
+    width: 100px;
+}
+
+.tab_menu .size_43 {
+    width: 43px;
+}
+
+
+
+/*
+div.tab_menu {}
+div.tab_menu ul {}
+div.tab_menu li {}
+div.tab_menu a {}
+
+div.tab {}
+p.tab {}
+span.tab {}
+클래스명이 같아도 선택자가 다르기 때문에 다른 스타일 적용이 가능하다
+*/

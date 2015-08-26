@@ -1,0 +1,140 @@
+@charset "utf-8";
+html{
+}
+body {
+    margin: 0px;
+    padding-top: 70px;
+}
+/*레이아웃 
+absolute; 브라우저 절대값. 브라우저 기준으로 정해진 좌표에 위치한다. 스크롤이 움직이면 정해진 위치에서 움직이지 않기 때문에 보이지 않는다.
+fixed; 브라우저에 위치 고정. 스크롤을 움직여도 항상 같은 위치에 보여진다.
+relative; 상대적인 좌표값. 브라우저 기준이 아니라 자신이 속해 있는 부모요소의 위치를 기준으로 좌표를 지정한다.
+*/
+.dimmed {
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    
+}
+
+.layer_popup {
+/*    display: none;*/
+    position: fixed;
+    z-index: 20;
+/*    중앙정렬을 위한 팁 50%하고 마진으로 레이어의 반으로 한다.*/
+    left: 50%;
+    top: 50%;
+    margin: -200px 0 0 -250px;
+/*
+    위에 내용을 풀어서..
+    margin-left: -250px;
+    margin-top: -200px;
+*/
+    width: 500px;
+    height: 400px;
+
+    opacity: inherit;
+    background-color: #fc0;
+    white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+.layer2{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    z-index: 3;
+    background-color: #fc0;
+    white-space: nowrap;
+}
+.go_top{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-color: aqua;
+}
+
+
+/*박스*/
+.wrap:after/*가상선택자*/{
+    clear: both;
+    display: block;
+    content: '';
+/*    color: #f00;*/
+}
+.wrap {
+    width: 600px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.box1 {
+    float: left;
+    position: relative;
+    z-index: 1;
+    width: 300px;
+    height: 300px;
+    padding: 30px;
+    border: 10px solid #119;
+    background-color: aqua;
+    box-sizing: border-box;
+}
+.box2 {
+    float: right;
+    position: relative;
+    z-index: 1; /* 같은 값이라면 나중에 나온 요소가 위로 간다.  */
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    border: 10px solid #909;
+    background-color: blueviolet;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+/*body { margin: 0; padding: 50px; }*/
+
+
+/*
+.floatInline { float:left; border: solid 1px #f00; }
+.inlineBlock { display: inline-block; border: 5px solid #f00; }
+*/
+
+/* inline은 한글자한글자 다르기 때문에 줄바꿈할때 한글자씩 줄이 바뀐다.*/
+/*a { width: 100px; height: 50px; padding: 20px; border: 5px solid; }*/
+
+/* 높이를 정하지 않을때 사용하기 좋다(float의 계단현상 방지) */
+/*a.inline_block { display: inline-block; border-color: #f00; }*/
+
+/* float속성은 다음영역을 당기는 성질이 있다. 영역이 꽉찼을때 다음행으로 줄바꿈할 때 빈공간이 있으면 그부분을 먼저 채우기 때문에 배치하기 까다롭다.(계단현상이 생길수 있음) */
+/*a.float_left { float: left; border-color: #00f; }*/
+
+/* none 속성은 보이지 않는 감춰진 레이어 같은 것을 사용할 때 좋다 */
+
+/* table은 아니지만 table처럼 사용한다. table과 table-cell은 한쌍이기 때문에 같이 사용해주어야 한다.(ex ul > li 또는 div > a 등)*/
+/*
+div { display: table; }
+a {display: table-cell; }
+*/
+
+/* 스크롤을 사용하지 않으려면 hidden, 사용하려는 방향으로 x, y로 정하면 된다. 
+overflow는 넘어가는 영역을 보지않도록 한다(줄바꿈, 스크롤 생성 같은것을 하지 않는다.) */
+.scroll { overflow: hidden; overflow-y: auto; }
+.table { display: table;  width: 1000px;}
+
+/* white-space: nowrap; << 줄바꿈 하지 않게*/
+a.float_left { float: left; display: table-cell; border: 1px solid #f00; padding: 10px; white-space: nowrap; }
+
+div:after { display: block; clear: both; content: ''; }

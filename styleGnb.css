@@ -23,36 +23,71 @@ body {
     text-align: center;
     text-decoration: none;    
 }
-.top_menu {
-    margin-top: 0px;
-    padding-top: 0px;
-    padding-left: 0px;
-    list-style: none;   
+.gnb_font {
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    
 }
-.top_menu:after {
+/* tab_menu1 */
+.tab_menu1 {
+    padding-left: 0px;
+    list-style: none;
+    border: 1px solid #555;
+}
+
+.tab_menu1 li {
+    float: left;
+    border: 1px solid #ccc;
+}
+.tab_menu1_a {
+    display: block;
+    width: 118px;
+    font-weight: bold;
+    line-height: 45px;
+    color: #555;
+    text-align: center;
+    text-decoration: none;
+}
+.tab_menu1:after {
     clear: both;
     display: block;
     content: '';
 }
+.top_botton_a {
+    float: right;
+    position: relative;
+    border: 1px solid #ccc;
+}
+.tab_menu1 li:hover{
+    border-color: #555;
+    z-index: 1;
+}
+
+.tab_menu1 li:hover a {
+    background-color: #555;
+    color: #fff;
+}
 
 
-.tab_menu {
+/* tab_menu2 */
+.tab_menu2 {
     padding-left: 0px;
     list-style: none;
     border-bottom: 2px solid #555;
 }
-.tab_menu:after {
+.tab_menu2:after {
     clear: both;
     display: block;
     content: '';
 }
 
-li {
+.tab_menu2 li {
     float: left;
     border: 1px solid #ccc;
     border-bottom: 0px;
 }
-a {
+.tab_menu2_a {
     display: block;
     width: 118px;
     font-weight: bold;
@@ -62,16 +97,22 @@ a {
     text-decoration: none;
 }
 
-li:hover{
+.tab_menu2 li:hover{
     border-color: #555;
 }
 
-li:hover a {
+.tab_menu2 li:hover a {
     background-color: #555;
     color: #fff;
 }
 .orthe_size {
+    display: block;
     width: 158px;
+    font-weight: bold;
+    line-height: 45px;
+    color: #555;
+    text-align: center;
+    text-decoration: none;
 }
 
 
