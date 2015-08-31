@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)http://sogoonii.github.io/fecamp/sample/layout_complex.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+	<title>민재</title>
+    <meta property="og:description" content="복잡한 레이아웃 예제">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <style>
+    /* 브라우저 기본 스타일을 제거하기 위한 코드 */
+    body, h1 {
+        margin: 0;
+        background: #eee;
+    }
+    ul {
+        list-style: none;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 0;
+    }
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+        
+    /* layout */
+    .wrap {
+        min-width: 800px;
+    }
+
+    header {
+        position: fixed;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        color: #fff;
+        text-align: center;
+        
+    }
+    header h1 {
+        line-height: 80px;
+        text-align: center;
+    }
+
+    footer {
+        background-color: #bbc3cc;
+        line-height: 70px;
+        text-align: center;
+    }
+        
+    menu {
+        position: fixed;
+        top: 100px;
+    }
+
+    .container {
+        overflow: hidden;
+        padding-top: 122px;
+    }
+
+    nav {
+        float: left;
+        width: 200px;
+/*        line-height: 70px;*/
+    }
+    .category {
+        border: 2px solid #008cff;
+        background-color: #fff;
+    }
+    .category li a {
+        display: block;
+        padding: 6px 0 5px 40px;
+        
+        /* 이미지 좌표지정 */
+        background-image: url(../img/coupang.png);
+        background-repeat: no-repeat;
+        
+        font-size: 12px;
+        font-family: '돋움', dotum, sans-serif;
+        line-height: 18px;
+        color: #333;
+    }
+    .category li a:hover {
+        font-weight: bold;
+        color: #008cff;
+
+    }
+    .category li a.item1 {
+        background-position: 10px -24px;
+    }
+    .category li a.item2 {
+        background-position: 10px -54px;
+    }
+    .category li a.item3 {
+        background-position: 10px -84px;
+    }
+    .category li a.item4 {
+        background-position: 10px -114px;
+    }
+    .category li a.item5 {
+        background-position: 10px -144px;
+    }
+    .category li a.item6 {
+        background-position: 10px -174px;
+    }
+    .category li a.item7 {
+        background-position: 10px -204px;
+    }
+    .category li a.item8 {
+        background-position: 10px -234px;
+    }
+    .category li a.item1:hover {
+        background-position: 13px -414px;
+    }
+    .category li a.item2:hover {
+        background-position: 13px -444px;
+    }
+    .category li a.item3:hover {
+        background-position: 13px -474px;
+    }
+    .category li a.item4:hover {
+        background-position: 13px -504px;
+    }
+    .category li a.item5:hover {
+        background-position: 13px -534px;
+    }
+    .category li a.item6:hover {
+        background-position: 13px -564px;
+    }
+    .category li a.item7:hover {
+        background-position: 13px -594px;
+    }
+    .category li a.item8:hover {
+        background-position: 13px -624px;
+    }
+
+    aside {
+        float: right;
+        width: 200px;
+        line-height: 70px;
+    }
+
+    .content {
+        overflow: hidden;
+        background-color: #fff;
+        line-height: 500px;
+        text-align: center;
+    }
+    /* gnb */ 
+    .gnb_wrap {
+        background-color: #333;
+    }
+    .gnb {
+        width: 900px;
+        margin: 0 auto;
+    }
+    .gnb:after {
+        display: block;
+        clear: both;
+        content: '';
+    }
+    /* 선택자 > + 사용. >를 사용하면 바로 아래 자식만 사용한다.
+        gnb 바로 밑에 있는 li만 적용된다.*/
+    .gnb > li{
+        float: left;
+        position: relative; /* gnb_sub의 넓이를 여기서 상속받게끔. 각각 자신의 부모 li에게 따로 상속받는다. */
+        width: 150px;
+    }    
+    .gnb > li > a{
+        display: block;
+        padding: 10px 0px;
+        border: 1px solid #ccc;
+        background-color: #333;
+        line-height: 20px;
+        color: #fff;
+        text-align: center;
+    }    
+    .gnb > li > a:hover{
+        background-color: #111;
+    }
+        
+/*  서브메뉴를 none 상태이다가 마우스오버에만 블럭으로 보이게 한다.
+    .gnb > li > a:hover + .gnb_sub {
+        display: block;
+    }    
+        아래처럼 사용할 수 있다. */
+    .gnb > li:hover .gnb_sub {
+        display: block;
+    }
+
+    /* 서브메뉴 */
+    .gnb_sub {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;        
+    }
+    .gnb_sub li {
+        background-color: #fff;
+    }
+    /* 선택자 +를 사용하면 조건이 맞는지 확인하여 스타일을 처리한다. gnb_sub에 li영역에 스타일을 처리하는데 바로 위의 부모 li가 있어야 스타일 적용한다. */
+    .gnb_sub li + li {
+        border-top: 1px solid #ccc;   
+    }
+    .gnb_sub li a {
+        display: block;
+        padding: 5px;
+        text-align: center;
+        color: #999;
+    }
+    .gnb_sub li a:hover {
+        color: #000;
+        background-color: #ccc;
+    }
+    /* 말줄임*/
+    .ellipsis {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    /* 배경이미지 */
+    .spot {
+        height: 500px;
+        background-image: url(../img/bg1.jpg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+/*         background-attachment: fixed; 브라우저를 기준으로 포지션을 고정한다 */
+/*        background-size: 50% auto;모바일에서 주로 사용한다. ex)100px 이미지를 50%로 줄이면 100px의 요소를 가지고 사이즈를 줄이기 때문에 레티나 디스플레이 등에서 선명하게 볼수있다. */
+    }
+
+
+    </style>
+ </head>
+<body>
+    <div class="wrap">
+        <header>
+            <h1><a href="#">Service</a></h1>
+            <div class="gnb_wrap">
+                <ul class="gnb">
+                    <li><a href="#">manu1</a>
+                        <ul class="gnb_sub">
+                            <li><a href="#" class="ellipsis">manu1-1manu1-1manu1-1</a></li>
+                            <li><a href="#">manu1-2</a></li>
+                            <li><a href="#">manu1-3</a></li>
+                        </ul>
+
+                    </li>
+                    <li><a href="#">manu2</a>
+                        <ul class="gnb_sub">
+                            <li><a href="#">manu2-1</a></li>
+                            <li><a href="#">manu2-2</a></li>
+                            <li><a href="#">manu2-3</a></li>
+                            <li><a href="#">manu2-4</a></li>
+                            <li><a href="#">manu2-5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">manu3</a>
+                        <ul class="gnb_sub">
+                            <li><a href="#">manu3-1</a></li>
+                            <li><a href="#">manu3-2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">manu4</a>
+                        <ul class="gnb_sub">
+                            <li><a href="#">manu4-1</a></li>
+                            <li><a href="#">manu4-2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">manu5</a>
+                        <ul class="gnb_sub">
+                            <li><a href="#">manu5-1</a></li>
+                            <li><a href="#">manu5-2</a></li>
+                            <li><a href="#">manu5-3</a></li>
+                            <li><a href="#">manu5-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">manu6</a></li>
+                </ul>
+            </div>
+        
+        </header>
+        <div class="container">
+            <nav>
+                <ul class="category">
+                    <li><a href="#" class="item1">패션의류/잡화</a></li>
+                    <li><a href="#" class="item2">뷰티</a></li>
+                    <li><a href="#" class="item3">출산/유아동</a></li>
+                    <li><a href="#" class="item4">식품</a></li>
+                    <li><a href="#" class="item5">주방/생활용품</a></li>
+                    <li><a href="#" class="item6">가구/홈데코</a></li>
+                    <li><a href="#" class="item7">가전/디지털</a></li>
+                    <li><a href="#" class="item8">스포츠/레저용품</a></li>
+                </ul>
+            
+            </nav>
+            <aside>aside</aside>
+            <div class="content">
+                <div class="spot"></div>
+                <p class="ellipsis">내용이 길어서 말줄임이 필요해요.
+                내용이 길어서 말줄임이 필요해요.
+                내용이 길어서 말줄임이 필요해요.
+                내용이 길어서 말줄임이 필요해요.
+                내용이 길어서 말줄임이 필요해요.
+                내용이 길어서 말줄임이 필요해요.
+                내용이 길어서 말줄임이 필요해요.
+                내용이 길어서 말줄임이 필요해요.
+                </p>
+                content<br>
+                content<br>
+                content<br>
+                content<br>
+            </div>
+        </div>
+        <footer>footer</footer>
+    </div>
+
+
+</body>
+</html>
