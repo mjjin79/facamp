@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>fecamp homework #3 - AIRBNB MARKUP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes">
+    <style>
+    .wrap {
+        width:100%;
+        overflow:hidden;
+        position:relative;
+    }
+     
+    .container {
+        padding-bottom : 106px;
+    }        
+          
+    body {
+        margin :0px;
+        font-family: arial,'나눔고딕';
+        line-height: 1.4;
+    }        
+    
+    ul {
+        list-style :none;
+        margin:0px 0px 110px;
+        padding:0px;
+    }
+        
+    /* content */
+    
+    .content {
+        padding: 10px;        
+        overflow:hidden;
+    }
+        
+    .content li {
+        padding: 4px;
+        border: 3px solid white;
+        position: relative;
+    }
+    
+    .content li a {                       
+        display:block;
+        position:relative;
+        background-repeat:no-repeat;
+        background-size: cover;
+        height:636px;        
+    }
+    
+    .content li:hover {
+        border: 3px solid red;
+    }
+        
+    .content li a.item_a {
+        background-image:url(img/item_a.jpg);   
+    } 
+    
+    .content li a.item_b {
+        background-image:url(img/item_b.jpeg);   
+    }
+    
+     .content li a.item_c {
+        background-image:url(img/item_c.jpg);   
+    } 
+/* 사진 아래 설명 시작 */            
+    .info {
+        height : 155px;
+        width : 100%;
+        background-color : white;
+        position:absolute;
+        z-index: 2;
+        bottom : 0px;
+    }
+    
+    .info span {
+        padding-top:40px;
+        padding-left:25px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow:hidden;
+    }
+        
+    .info span.t1 {
+        display:block;
+        color:#565a5c;
+        font-size: 30px;
+    }
+        
+    .info span.t2 {
+        color:#82898d;
+        font-size: 20px;
+    }
+/* 사진 아래 설명 끝*/
+/* 가격표 시작 */
+    .price {
+        line-height: 62.5px;
+        padding: 0 25px;
+        background-color: rgba(0, 0, 0, 0.76);
+        position:absolute;
+        z-index: 3;
+        bottom: 185px;
+        display: block;
+        color:white;
+        font-size:40px;
+    }
+    
+    .price sup {
+        font-size:20px;
+    }
+/* 가격표 끝 */
+/* user 표시 시작 */
+    
+    .seller span {
+        position:absolute;
+        display: block;
+        z-index: 5;
+        right:32px;
+        bottom:103.6px;
+        width: 103px;
+        height: 103px;
+        background-repeat:no-repeat;
+    }
+    .seller1 {
+        background-image:url(img/player1.png)
+    }
+    .seller2 {
+        background-image:url(img/player2.png)
+    }
+    .seller3 {
+        background-image:url(img/play3.png)
+    }
+        
+    
+        
+/* gnb 시작 */    
+    .gnb {
+        background-color:white;
+        position:fixed;
+        z-index: 9999;
+        width:100%;
+        height:110px;
+        left:0px;
+        right:0px;
+        bottom:0px;
+    }
+    
+    .gnb li {
+        display:block;
+        float:left;
+        background-color: white;
+        margin-left: 0px;
+        height: 108.5px;
+    }
+            
+    .gnb li:hover a {
+        border-bottom: 3px solid #ff615e;
+    }
+        
+    .gnb li a {
+        display:block;
+        width:128px;
+        height:110px;
+        background-image:url(img/icons.png);
+        background-repeat:no-repeat;
+        box-sizing: border-box;
+    }
+    
+    .gnb li a.item1 {
+        background-position: 2.5px -82px;
+    }
+    .gnb li:hover a.item1 {
+        background-position: 2.5px 26px;
+    }
+    
+    .gnb li a.item2 {
+        background-position: -114.5px -137.5px;
+    }
+    
+    .gnb li:hover a.item2 {
+        background-position: -114.5px -27px;
+    }    
+    
+    .gnb li a.item3 {
+        background-position: -232.5px 26px;
+    }
+    .gnb li:hover a.item3 {
+        background-position: -232.5px -82px;
+    }    
+    
+    .gnb li a.item4 {
+        background-position: -354.5px -27px;
+    }
+    .gnb li:hover a.item4 {
+        background-position: -354.5px -137.5px;
+    }    
+    
+    .gnb li a.item5 {
+        background-position: -561.5px 26px;
+    }
+        
+    /* gnb */
+                
+    </style>
+</head>
+    
+    
+<body>
+    <div class="wrap">
+        <div class="content">
+            <ul>
+                <li>
+                    <a class="item_a" href="#">
+                        <div class="info">
+                            <span class="t1">Convenient / Clean / Shinsaibashi</span>
+                            <span class="t2">집 전체 - 후기 30개 - Osaka</span>
+                        </div>
+                        <div class="price"><sup>US$</sup>50</div>
+                        <div class="seller"><span class="seller1"></span></div>
+                    </a>
+                </li>
+                <li>
+                    <a class="item_b" href="#">
+                        <div class="info">
+                            <span class="t1">Tiny clean room in convenience town</span>
+                            <span class="t2">개인실 - 후기 8개 - Koh Tao</span>
+                        </div>
+                        <div class="price"><sup>US$</sup>1,200</div>
+                        <div class="seller"><span class="seller2"></span></div>
+                    </a>
+                </li>
+                <li>
+                    <a class="item_c" href="#">
+                        <div class="info">
+                            <span class="t1">5 min. walk to Efel tower / Convenient location</span>
+                            <span class="t2">집 전체 - 후기 30개 - Osaka</span>
+                        </div>
+                        <div class="price"><sup>US$</sup>90</div>
+                        <div class="seller"><span class="seller3"></span></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="gnb">
+            <ul>
+                <li><a class="item1" href="#"></a></li>
+                <li><a class="item2" href="#"></a></li>
+                <li><a class="item3" href="#"></a></li>
+                <li><a class="item4" href="#"></a></li>
+                <li style="float:right;"><a class="item5" href="#"></a></li>            
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>
