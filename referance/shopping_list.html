@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>상품목록 - 반응형 적용하기</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+    <style>
+        /* common css (reset css) */
+        body {
+            margin: 0;
+        }
+        
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* 상품 목록 */
+        .shopping_list {
+            overflow: hidden;
+            padding: 10px 5px;
+        }
+        
+        .shopping_item {
+        }
+        
+        .shopping_item .box {
+            padding: 0 5px;
+        }
+        
+        .shopping_item p {
+            margin: 0 5px;
+            padding: 10px 0 15px;
+        }
+        
+        .thumb {
+            border: 1px solid;
+        }
+        
+        .thumb img {
+            display: block;
+        }
+        
+        .ellipsis {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        @media all and (min-width:400px) {
+            .shopping_item {
+                float: left;
+                width: 50%;
+            }
+        }
+        
+        @media screen and (min-width:700px) {
+            .shopping_item {
+                width: 33.3%;
+            }
+        }
+        
+        @media screen and (min-width:800px) {
+            .shopping_item {
+                width: 25%;
+            }
+        }
+        
+        @media screen and (min-width:900px) {
+            .shopping_item {
+                width: 20%;
+            }
+        }
+                
+    </style>
+</head>
+<body>
+    
+    <ul class="shopping_list">
+        <li class="shopping_item">
+            <div class="box">
+                <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                <p class="ellipsis">여기에 상품명을 적을거에요. 여기에 상품명을 적을거에요.</p>
+            </div>
+        </li>
+        <li class="shopping_item">
+            <div class="box">
+                <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+            </div>
+        </li>
+        <li class="shopping_item">
+            <div class="box">
+                <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+            </div>
+        </li>
+        <li class="shopping_item">
+            <div class="box">
+                <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+            </div>
+        </li>
+        <li class="shopping_item">
+            <div class="box">
+                <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+            </div>
+        </li>
+        <li class="shopping_item">
+            <div class="box">
+                <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+            </div>
+        </li>
+        <li class="shopping_item">
+            <div class="box">
+                <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+            </div>
+        </li>
+        <li class="shopping_item">
+            <div class="box">
+                <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+            </div>
+        </li>
+        <li class="shopping_item">
+            <div class="box">
+                <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+            </div>
+        </li>
+        <li class="shopping_item">
+            <div class="box">
+                <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+            </div>
+        </li>
+        <li class="shopping_item">
+            <div class="box">
+                <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+            </div>
+        </li>
+        <li class="shopping_item">
+            <div class="box">
+                <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+            </div>
+        </li>
+        <li class="shopping_item">
+            <div class="box">
+                <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+            </div>
+        </li>
+        <li class="shopping_item">
+            <div class="box">
+                <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+            </div>
+        </li>
+        <li class="shopping_item">
+            <div class="box">
+                <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+            </div>
+        </li>
+        <li class="shopping_item">
+            <div class="box">
+                <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+            </div>
+        </li>
+        <li class="shopping_item">
+            <div class="box">
+                <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+            </div>
+        </li>
+        <li class="shopping_item">
+            <div class="box">
+                <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+            </div>
+        </li>
+        <li class="shopping_item">
+            <div class="box">
+                <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+            </div>
+        </li>
+        <li class="shopping_item">
+            <div class="box">
+                <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+            </div>
+        </li>
+    </ul>
+
+
+</body>
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>레이아웃 만들기</title>
+    <style>
+        /* 브라우저 기본 스타일을 제거하기 위한 코드 */
+        body, h1 {
+            margin: 0;
+        }
+        
+        ul {
+            list-style: none;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-left: 0;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        /* layout */
+        .wrap {
+        }
+        
+        header {
+/*
+            position: fixed;
+            left: 0;
+            right: 0;
+*/
+            background: #fff;
+        }
+        
+        header h1 {
+            line-height: 80px;
+            text-align: center;
+        }
+        
+        footer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 0;
+            border-top: 1px solid #999;
+            text-align: center;
+        }
+        
+        nav {
+            display: none;
+            float: left;
+            width: 200px;
+        }
+        
+        .category_header {
+            
+        }
+        
+        .category {
+            border: 2px solid #008cff;
+            background-color: #fff;
+        }
+        
+        .category li a {
+            display: block;
+            padding: 6px 0 5px 40px;
+            background-image: url(img/coupang.png);
+            background-repeat: no-repeat;
+            font-size: 12px;
+            font-family: '돋움', dotum, sans-serif;
+            line-height: 18px;
+            color: #333;
+        }
+        
+        .category li a:hover {
+            font-weight: bold;
+            color: #008cff;
+        }
+        
+        .category li a.item1 {
+            background-position: 10px -24px;
+        }
+        
+        .category li a.item2 {
+            background-position: 10px -54px;
+        }
+        
+        .category li a.item3 {
+            background-position: 10px -84px;
+        }
+        
+        .category li a.item1:hover {
+            background-position: 15px -414px;
+        }
+        
+        .category li a.item2:hover {
+            background-position: 15px -444px;
+        }
+        
+        .category li a.item3:hover {
+            background-position: 15px -474px;
+        }
+        
+        aside {
+            display: none;
+            float: right;
+            width: 100px;
+            background-color: #00f;
+        }
+        
+        .container {
+            overflow: hidden;
+        }
+        
+        .content {
+            overflow: hidden;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        /* gnb */
+        .gnb_wrap {
+            background-color: #333;
+        }
+        
+        .gnb {
+            max-width: 900px;
+            margin: 0 auto;
+            border-left: 1px solid #999;
+            border-right: 1px solid #999;
+        }
+        
+        .gnb:after {
+            display: block;
+            clear: both;
+            content: '';
+        }
+        
+        .gnb > li {
+            float: left;
+            position: relative;
+            width: 16.66%;
+            box-sizing: border-box;
+        }
+        
+        .gnb > li + li {
+            border-left: 1px solid #999;
+        }
+        
+        .gnb > li > a {
+            display: block;
+            padding: 10px 0;
+            background-color: #333;
+            line-height: 20px;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .gnb > li > a:hover {
+            background-color: #000;
+        }
+        
+        .gnb > li:hover {
+            z-index: 1;
+        }
+        
+        .gnb > li:hover .gnb_sub {
+            display: block;
+        }
+        
+        .gnb_sub {
+            display: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            border: 1px solid;
+        }
+        
+        .gnb_sub li {
+            background-color: #fff;
+        }
+        
+        .gnb_sub li + li {
+            border-top: 1px solid #ccc;
+        }
+        
+        .gnb_sub li a {
+            display: block;
+            padding: 5px;
+            text-align: center;
+            color: #999;
+        }
+        
+        .gnb_sub li a:hover {
+            color: #000;
+        }
+        
+        .ellipsis {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        /* gnb메뉴가 600px이하가 되면 두줄로 바뀐다        */
+        @media screen and (max-width:600px) {
+            .gnb > li {
+                width: 33.3%;
+            }
+        }
+        /* gnb메뉴가 400px이하가 되면 세줄로 바뀐다        */
+        @media screen and (max-width:400px) {
+            .gnb > li {
+                width: 50%;
+            }
+        }         
+        
+        .spot {
+            height: 250px;
+            background-image: url(img/big.jpg);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
+        }
+        
+        /* 상품 목록 */
+        .shopping_list {
+            overflow: hidden;
+            margin: 0 -10px;
+            padding: 10px 5px;
+        }
+        
+        .shopping_item {
+        }
+        
+        .shopping_item .box {
+            padding: 0 5px;
+        }
+        
+        .shopping_item p {
+            margin: 0 5px;
+            padding: 10px 0 15px;
+        }
+        
+        .thumb {
+            border: 1px solid;
+        }
+        
+        .thumb img {
+            display: block;
+        }
+        
+        .ellipsis {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        @media all and (min-width:400px) {
+            .shopping_item {
+                float: left;
+                width: 50%;
+            }
+        }
+        
+        @media screen and (min-width:700px) {
+            .shopping_item {
+                width: 33.3%;
+            }
+        }
+        
+        @media screen and (min-width:800px) {
+            .shopping_item {
+                width: 25%;
+            }
+        }
+        
+        @media screen and (min-width:900px) {
+            .shopping_item {
+                width: 20%;
+            }
+        }
+    </style>
+</head>
+<body> 
+
+    <div class="wrap">
+        <header>
+            <h1><a href="#">서비스명</a></h1>
+            <div class="gnb_wrap">
+                <ul class="gnb">
+                    <li><a href="#">메뉴1</a>
+                        <ul class="gnb_sub">
+                            <li><a href="#" class="ellipsis" title="메뉴1-1">메뉴1-1</a></li>
+                            <li><a href="#" class="ellipsis" title="메뉴1-1">메뉴1-2</a></li>
+                            <li><a href="#" class="ellipsis" title="메뉴1-1">메뉴1-3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">메뉴2</a>
+                        <ul class="gnb_sub">
+                            <li><a href="#" class="ellipsis" title="메뉴1-1">메뉴2-1</a></li>
+                            <li><a href="#" class="ellipsis" title="메뉴1-1">메뉴2-2</a></li>
+                            <li><a href="#" class="ellipsis" title="메뉴1-1">메뉴2-3</a></li>
+                            <li><a href="#" class="ellipsis" title="메뉴1-1">메뉴2-4</a></li>
+                            <li><a href="#" class="ellipsis" title="메뉴1-1">메뉴2-5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">메뉴3</a>
+                        <ul class="gnb_sub">
+                            <li><a href="#" class="ellipsis" title="메뉴1-1">메뉴3-1</a></li>
+                            <li><a href="#" class="ellipsis" title="메뉴1-1">메뉴3-2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">메뉴4</a>
+                        <ul class="gnb_sub">
+                            <li><a href="#" class="ellipsis" title="메뉴1-1">메뉴4-1</a></li>
+                            <li><a href="#" class="ellipsis" title="메뉴1-1">메뉴4-2</a></li>
+                            <li><a href="#" class="ellipsis" title="메뉴1-1">메뉴4-3</a></li>
+                            <li><a href="#" class="ellipsis" title="메뉴1-1">메뉴4-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">메뉴5</a>
+                        <ul class="gnb_sub">
+                            <li><a href="#" class="ellipsis">메뉴5-1</a></li>
+                            <li><a href="#" class="ellipsis">메뉴5-2</a></li>
+                            <li><a href="#" class="ellipsis">메뉴5-3</a></li>
+                            <li><a href="#" class="ellipsis">메뉴5-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">메뉴6</a>
+                        <ul class="gnb_sub">
+                            <li><a href="#" class="ellipsis">메뉴6-1</a></li>
+                            <li><a href="#" class="ellipsis">메뉴6-2</a></li>
+                            <li><a href="#" class="ellipsis">메뉴6-3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <div class="container">
+            <nav>
+                <ul class="category">
+                    <li><a href="#" class="item1">패션의류/잡화</a></li>
+                    <li><a href="#" class="item2">뷰티</a></li>
+                    <li><a href="#" class="item3">출산/유아동</a></li>
+                    <li><a href="#">식품</a></li>
+                    <li><a href="#">주방/생활용품</a></li>
+                    <li><a href="#">가구/홈데코</a></li>
+                    <li><a href="#">가전/디지털</a></li>
+                    <li><a href="#">스포츠/레저용품</a></li>
+                </ul>
+            </nav>
+            <aside>사이드 영역</aside>
+            <div class="content">
+                
+                <div class="spot">
+                </div>
+
+                <ul class="shopping_list">
+                    <li class="shopping_item">
+                        <div class="box">
+                            <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                            <p class="ellipsis">여기에 상품명을 적을거에요. 여기에 상품명을 적을거에요.</p>
+                        </div>
+                    </li>
+                    <li class="shopping_item">
+                        <div class="box">
+                            <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                            <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+                        </div>
+                    </li>
+                    <li class="shopping_item">
+                        <div class="box">
+                            <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                            <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+                        </div>
+                    </li>
+                    <li class="shopping_item">
+                        <div class="box">
+                            <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                            <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+                        </div>
+                    </li>
+                    <li class="shopping_item">
+                        <div class="box">
+                            <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                            <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+                        </div>
+                    </li>
+                    <li class="shopping_item">
+                        <div class="box">
+                            <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                            <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+                        </div>
+                    </li>
+                    <li class="shopping_item">
+                        <div class="box">
+                            <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                            <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+                        </div>
+                    </li>
+                    <li class="shopping_item">
+                        <div class="box">
+                            <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                            <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+                        </div>
+                    </li>
+                    <li class="shopping_item">
+                        <div class="box">
+                            <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                            <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+                        </div>
+                    </li>
+                    <li class="shopping_item">
+                        <div class="box">
+                            <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                            <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+                        </div>
+                    </li>
+                    <li class="shopping_item">
+                        <div class="box">
+                            <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                            <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+                        </div>
+                    </li>
+                    <li class="shopping_item">
+                        <div class="box">
+                            <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                            <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+                        </div>
+                    </li>
+                    <li class="shopping_item">
+                        <div class="box">
+                            <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                            <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+                        </div>
+                    </li>
+                    <li class="shopping_item">
+                        <div class="box">
+                            <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                            <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+                        </div>
+                    </li>
+                    <li class="shopping_item">
+                        <div class="box">
+                            <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                            <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+                        </div>
+                    </li>
+                    <li class="shopping_item">
+                        <div class="box">
+                            <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                            <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+                        </div>
+                    </li>
+                    <li class="shopping_item">
+                        <div class="box">
+                            <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                            <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+                        </div>
+                    </li>
+                    <li class="shopping_item">
+                        <div class="box">
+                            <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                            <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+                        </div>
+                    </li>
+                    <li class="shopping_item">
+                        <div class="box">
+                            <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                            <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+                        </div>
+                    </li>
+                    <li class="shopping_item">
+                        <div class="box">
+                            <div class="thumb"><img src="img/thumb.png" width="100%" alt=""></div>
+                            <p class="ellipsis">여기에 상품명을 적을거에요.</p>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <footer>푸터</footer>
+    </div>
+</body>
+</html>
