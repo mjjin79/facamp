@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>플리커 만들기</title>
+    <style>
+        /* 브라우저 기본 스타일을 제거하기 위한 코드 */
+        body {
+            margin: 0;
+        }
+        /*        */
+        .flick {
+            overflow: hidden;
+            position: relative;
+            width: 320px;
+            height: 240px;
+            margin: 0 auto;
+            border: 1px solid #000;
+/*            opacity: 0.5;*/
+/*            box-shadow: 10px 10px 10xp 10px #f00;*/
+/*            text-shadow: 2px 2px 2px #f00*/
+            outline: 1px solid #f00;
+        }
+        /* left값을 100%단위로 증감하면 플리킹 효과를 볼수 있다.*/
+        .flick_container{
+            position: absolute;
+            left: -100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ccc;
+        }
+        .flick_panel{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* 가상선택자 사용. 해당 클래스에 html순서대로 스타일을 적용할 수 있다.*/
+        .flick_panel:nth-child(1) {
+            background-color: #f00;
+        }
+        .flick_panel:nth-child(2) {
+            background-color: #090;
+        }
+        .flick_panel:nth-child(3) {
+            background-color: #00f;
+        }
+        
+        .flick_indicator{
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 15px;
+            text-align: center;
+            
+            
+        }
+        .flick_indicator span{
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border: 1px solid #999;
+            border-radius: 50%; /*원만들기*/
+            background-color: #ccc;
+            vertical-align: bottom;
+            
+        }
+        
+        .flick_indicator span.on {
+            border-color: #00f;
+            background-color: #00f;
+        }
+
+
+    </style>
+</head>
+<body> 
+    <div class="flick">
+        <div class="flick_container">
+            <div class="flick_panel" style="left: 0;">A</div>
+            <div class="flick_panel" style="left: 100%;">B</div>
+            <div class="flick_panel" style="left: 200%;">C</div>
+        </div>
+    <div class="flick_indicator">
+        <span></span>
+        <span class="on"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
