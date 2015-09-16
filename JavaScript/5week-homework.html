@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>5Week Homework</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="JavaScript">
+</head>
+<body>
+    <script>
+        //1번
+        var numbers = [100, 200, 300];
+        console.log('**********1번문제**********\n');
+        for(var i in numbers){
+            console.log(numbers[i]);
+        };
+        
+        //2번
+        var nested = [[10, 20, 30], ['html', 'css', 'javascript']];
+        console.log('**********2번문제**********\n');
+        for(var i in nested){
+            console.log(nested[i]);
+        };
+        
+        //3번
+        var 수강생 = new Object;
+        수강생.이름 = 'JIN-MINJAE';
+        수강생.성별 = 'male';
+        수강생.개발자 = false;
+        
+        console.log('**********3번문제**********\n');
+        console.log(수강생);
+        
+        //4번
+        var array = ['JavaScript', 'HTML5', 'CSS', 'JAVA'];
+        function 원소(array, index){
+            return array[index];
+        };
+        
+        console.log('**********4번문제**********\n');
+        console.log(원소(array,0));
+        
+        //5번
+        function 세제곱(num){
+            return Math.pow(num, 3);
+        };
+        
+        console.log('**********5번문제**********\n');
+        console.log(세제곱(2));
+        console.log(세제곱(3));
+        
+        //6번
+        var today = new Date();
+        function 날짜(date){
+            return `${date.getFullYear()}년 ${date.getMonth()+1}월 ${date.getDate()}일 (${'일월화수목금토'[date.getDay()]})`;
+        };
+        
+        console.log('**********6번문제**********\n');
+        console.log(날짜(today));    
+    </script>
+
+</body>
+</html>
