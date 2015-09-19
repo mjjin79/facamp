@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Untitled Document</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+</head>
+<body>
+    <script>
+    //정규표현식
+    /a(b+(c))/i.exec("AabCD");
+        
+    // URI 인코딩 / 디코딩
+    encodeURI("http://taegon.kim/?s=자바스크립트");
+        
+    encodeURIComponent("http://taegon.kim/?s=자바스크립트");
+        
+    decodeURI("http://taegon.kim/?s=%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8");
+        
+    decodeURIComponent("http%3A%2F%2Ftaegon.kim%2F%3Fs%3D%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8");
+        
+    //if조건문
+    function 자리수(num) {
+        if( num < 10 ){
+            return str = "한자리수 입니다."
+        }else if( num < 100 ) {
+            return str = "두자리수 입니다."
+        }else if( num < 1000 ) {
+            return str = "세자리수 입니다."
+        }else{
+            return str = "무슨글자인지 모르겠습니다"
+        }
+    }
+    자리수(111);
+    자리수(1);
+    자리수(99);
+    자리수(1299);
+        
+    function 숫자(num) {
+        if ( num === 1) {
+            return str = "1 입니다."
+        }else if( num === 2) {
+            return str = "2 입니다."
+        }else if( num === 3) {
+            return str = "3 입니다."
+        }else{
+            return str = "모르는 수 입니다."
+        }
+    }
+    숫자(1);
+        
+    //switch 조건문
+    function 숫자(num){
+        switch(num) {
+            case 1:
+                console.log('1입니다.');
+                break;
+            case 2:
+                console.log('2입니다.');
+                break;
+            case 3:
+                console.log('3입니다.');
+                break;
+            default:
+                console.log('모르는 수 입니다.');
+                break;
+        }
+    }
+        숫자(2);
+        
+    //for 반복문
+    function out(){
+        console.log('시작=', i);
+        for(var i=0; i <10; i++) {
+            console.log(i);    
+        }
+        console.log('끝=', i);
+    };
+        out();
+    
+    //for ... in 반복문
+    var obj = {"prop1":"value1", "prop2":20};
+     for (var name in obj){
+          console.log(name, '=', obj[name]);
+     }
+
+    //break, continue
+    function 구구단() {
+        for (var i=1; i < 10; i++) {
+            if(i===5) continue;
+            var 값 = 3 * i;
+            console.log('3 '+'* '+i+' = '+ 값);
+            console.log(`3 * ${i} =  ${값}`); //이렇게 쓸수도 있음
+        }
+    };
+    
+    //레이블
+    var i, j;
+        
+    outer:
+        for(i=9; i < 3; i++) {
+        inner:
+            for(j=0; j < 3; j++) {
+                if(i === 1 && j === 1) continue outer;
+                console.log('i=', i, 'j=', j);
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </script>
+
+</body>
+</html>

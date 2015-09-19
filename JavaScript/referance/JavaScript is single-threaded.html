@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://taggon.github.io/WebUI_Basic/example/thread.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>JavaScript is single-threaded</title>
+		<script>
+		var timerID, intervalID;
+		function start1() {
+			init();
+			var i = 0;
+			var start = new Date();
+			intervalID = setInterval(function(){
+				var elapsed = new Date() - start;
+				if (++i > 10) clearInterval(intervalID);
+				console.log('seq: '+i+' / '+elapsed+'ms');
+			}, 100);
+		}
+
+		function start2() {
+			init();
+			var i = 0;
+			var start = new Date();
+
+			intervalID = setInterval(function(){
+				var elapsed = new Date() - start;
+				if (++i > 10) clearInterval(intervalID);
+				console.log('seq: '+i+' / '+elapsed+'ms');
+			}, 100);
+
+			timerID = setTimeout(function(){
+				var d = new Date();
+				while (1) {
+					if (new Date() - d > 300) break;
+				}
+				console.log('timeout is excuted!');
+			}, 250);
+		}
+
+		function init() {
+			clearTimeout(timerID);
+			clearInterval(intervalID);
+			console.clear();
+		}
+		</script>
+	<link type="text/css" rel="stylesheet" href="chrome-extension://eobejphpabbjeehffmbiecckpkggpbai/style.css"><script type="text/javascript" charset="utf-8" src="chrome-extension://eobejphpabbjeehffmbiecckpkggpbai/js/content-script/page_context.js"></script><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+	<body naver_screen_capture_injected="true">
+		<button onclick="start1()" style="width:150px;height:50px;">Start1</button>
+		<button onclick="start2()" style="width:150px;height:50px;">Start2</button>
+	
+
+</body><audio src="" id="naver_dic_audio_controller" controls="controls" style="width: 0px; height: 0px;"></audio></html>

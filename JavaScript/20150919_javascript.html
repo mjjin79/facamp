@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Untitled Document</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+</head>
+<body>
+    <script>
+        //setTimeout
+        setTimeout("console.log('Hello');", 1000);
+        
+        //아래 형식을 익히자
+        setTimeout(function(){
+            console.log('Hello');
+        }, 1000);
+        
+        //clearTimeout
+        var timer = setTimeout(function(){
+            console.log('Hello');
+        }, 1000);
+        clearTimeout(timer);
+        
+        
+        //setInterval
+        setInterval("console.log('Hello');", 1000);
+        //아래 형식을 익히자
+        setInterval(function(){
+            console.log('Hello');
+        }, 1000);
+        
+        //clearInterval
+        var timeInterval = setInterval(function(){
+            console.log('Hello');
+        }, 1000);
+        
+        clearInterval(timeInterval);
+        
+        //1초마다 현재 시간 출력
+        setInterval(function(){
+            var now =new Date();
+            console.log(`${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`);
+        }, 1000);
+        
+        //1초마다 한번씩 카운트다운하여 0이 되면 '끝'을 출력
+        //setTimeout사용
+        function fn(num){
+            console.log(num);
+            if(num === 0) {
+                console.log('끝');
+                return;
+            }
+            setTimeout(function(){
+                fn(num - 1);
+            }, 1000);    
+        }
+        
+        //setInterval사용
+        function fn(num) {
+            console.log(num)
+            var timerID = setInterval(function(){
+                num = num -1;
+                console.log(num);
+                if(num === 0){
+                    console.log('끝');
+                    clearInterval(timerID);
+                }
+            }, 1000);
+        }
+        
+        //this
+        function sayName(){
+          console.log(this.name);  
+        }
+        var peter = {
+                name: 'Perter Parker',
+                sayName: sayName
+        };
+        var bruce = {
+            name: 'Bruce Wayne',
+            sayName: sayName
+        };
+        var name = 'Hero';
+        
+        peter.sayName();
+        bruce.sayName();
+        sayName();
+        
+        //apply(), call(), bind()
+        var peter = {
+            name: 'Peter Parker',
+            sayName: function
+            
+        };
+        
+        //Tip 1: 배열 또는 플레인 오브젝트를 확인하는 방법
+        function isPlainObject(obj){
+            return ({}).toString.call(obj) === "[object Object]";    
+        }
+        
+        //Tip 2: HTMLCollection을 배열로 변환하는 방법
+        var arrofElem = concat.apply([], collection);
+        
+        //Tip 3: this를 포함한 콜백 함수(잘못된 코드)
+        var peter = {
+            name: 'Peter Paker',
+            sayName: function(){
+                setTimeout(function(){
+                    console.log(this.name); //빈값이 나온다
+                }, 2000);
+            }
+        }
+        //
+        function sayName() {
+            console.log(this.name);
+        }
+        var peter = {
+            name: 'Peter Paker',
+            sayName: function(){
+                var bound = sayName.bind(this);
+                setTimeout(bound, 2000);
+            }
+        };
+        peter.sayName();
+        
+        //Strict mode
+        //전역 컨텍스트에 엄격한 모드 적용
+        'use strict';
+        
+        function fn(){
+            //함수 컨텍스트에 엄격한 모드 적용
+            "use strict";
+        }
+ 
+        function fn() {
+            "use strict";
+            
+            nonDefinedVar = 10; //TypeError
+        }
+        
+        function fn() {
+            "use strict";
+            var peter = {
+                name: 'Peter Paker'    
+            };
+            Object.freeze(peter);
+            peter.aka = "spiderman";
+            console.log(peter);            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+    
+    
+    
+    
+    </script>
+</body>
+</html>
