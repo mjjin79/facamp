@@ -2,8 +2,9 @@
 <html>
 <head>
     <title>20151007_01_JavaScript</title>
+    <meta name="viewport" content="width=device-width">
     <meta charset="UTF-8">
-    <meta name="description" content="">
+    <meta name="description" content="마우스 드래그 이벤트">
     <meta name="keywords" content="">
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <script>
@@ -35,7 +36,7 @@
             
             
             
-            $('#box').on('mousedown', function(event) {
+            $('#box').on('mousedown touchstart', function(event) {
                 var top = parseInt($(this).css('top')), left = parseInt($(this).css('left'));
                 var startX = event.pageX, startY = event.pageY;
 //                console.log(top, left, startX, startY);
@@ -43,14 +44,14 @@
                 
                 event.preventDefault(); //기본동작 사용안함
                 
-                $(document).on('mousemove.drag', function(event) { //'mousemove.drag' 이벤트명에 네임스페이스 기능을 사용하여 .drag를 추가 
+                $(document).on('mousemove.drag touchmove', function(event) { //'mousemove.drag' 이벤트명에 네임스페이스 기능을 사용하여 .drag를 추가 
                     var dx = event.pageX - startX, dy = event.pageY - startY;
                     var newTop = top + dy, newLeft = left + dx;
                     $box.css({top: newTop, left: newLeft});
                 });
-                $(document).on('mouseup.drag', function(event) {
+                $(document).on('mouseup.drag touchend', function(event) {
 //                    $(this).off('mousemove').off('mouseup'); //이벤트 삭제
-                    $(this).off('mousemove.drag mouseup.drag'); //위에 문장을 간략하게 쓸수있다.
+                    $(this).off('mousemove.drag mouseup.drag touchmove touchend'); //위에 문장을 간략하게 쓸수있다.
                     
                 });
             });
