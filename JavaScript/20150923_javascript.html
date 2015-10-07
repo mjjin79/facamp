@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>연습문제</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+</head>
+<body>
+    <ul></ul>
+    <button>클릭하면 추가</button>
+   <script>
+       var button = document.querySelector('button');
+       var list = document.querySelector('ul');
+       
+       button.addEventListener('click', function(event){
+           var li = document.createElement('li'), now = new Date();
+           li.innerHTML = `추가된 시각: <strong>${now}</strong>`;
+           li.addEventListener('click', function(){
+               li.querySelector('strong').style.color='#00f';
+           });
+            list.appendChild(li);
+       });
+    
+    
+    </script> 
+    
+
+</body>
+</html>

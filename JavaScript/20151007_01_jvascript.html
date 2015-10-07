@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>20151007_01_JavaScript</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script>
+        jQuery(function($) {  
+            /*
+            function start(){
+                $('#box').delay(1000).animate({left: '500px'}, complete);
+            }
+            function complete() {
+                $('#box').delay(1000).animate({top: '200px'}, back);
+            }
+            function back() {
+                $('#box').delay(1000).animate({left: '10px'}, top);
+            }
+            function top() {
+                $('#box').delay(1000).animate({top: '10px'}, start);
+            }
+            start();
+            */
+                  
+            $('button').on('click', function(event) {
+                $('#box').stop(true);  
+                /*
+                .stop( [clearQueue ] [, jumpToEnd ] )
+                delay애니메이션과 animate가 합쳐진 function이기 때문에 stop가 안될 수 있다.
+                그럴때 clearQueue옵션을 true로 넣어준다.
+                */
+            });
+            
+            
+            
+            $('#box').on('mousedown', function(event) {
+                var top = parseInt($(this).css('top')), left = parseInt($(this).css('left'));
+                var startX = event.pageX, startY = event.pageY;
+//                console.log(top, left, startX, startY);
+                var $box = $(this); //박스 변수처리. 변수처리를 하지 않으면 이벤트가 발생할때마다 박스를 찾는 비효율적인 동작이 발생
+                
+                event.preventDefault(); //기본동작 사용안함
+                
+                $(document).on('mousemove.drag', function(event) { //'mousemove.drag' 이벤트명에 네임스페이스 기능을 사용하여 .drag를 추가 
+                    var dx = event.pageX - startX, dy = event.pageY - startY;
+                    var newTop = top + dy, newLeft = left + dx;
+                    $box.css({top: newTop, left: newLeft});
+                });
+                $(document).on('mouseup.drag', function(event) {
+//                    $(this).off('mousemove').off('mouseup'); //이벤트 삭제
+                    $(this).off('mousemove.drag mouseup.drag'); //위에 문장을 간략하게 쓸수있다.
+                    
+                });
+            });
+            
+        });        
+        /*
+        $('#box').show(500);
+        $('#box').hide(300);
+        $('#box').toggle(500);
+        $('#box').fadeIn(500);
+        $('#box').fadeOut(500);
+        $('#box').fadeToggle(500);
+        $('#box').slideUp(500);
+        $('#box').slideDown(500);
+        $('#box').slideToggle(500);
+        $('#box').stop();
+        $('#box').finish();
+        $('#box').slideUp(500).delay(1000).slideDown(500);
+        */
+        
+    </script>
+    <style>
+        #box {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100px;
+            height: 100px;
+            background: #0f0;
+        }
+        #stop {
+            position: absolute;
+            top: 150px;
+            left: 150px;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <button id="stop">STOP</button>
+</body>
+</html>

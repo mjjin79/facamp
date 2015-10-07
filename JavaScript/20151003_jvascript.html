@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>20151003_JavaScript</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="JQuery Study | FastCampus">
+    <meta name="keywords" content="JQuery">
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="http://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script>
+        jQuery(document).ready(function($){
+            //delefate / bind 를 합쳐서 on이 생김
+//            $('#obj').on('click.my', function(event){
+//                $(this).css('color','#00f');
+//            });
+            //off를 하면 'click'에 대한 이벤트가 사라지기 때문에 이벤트의 이름을 click.my와 같이 이름을 정할 수 있다
+            //$('#obj').off('click.my');
+            
+            //li를 선택하면 빨간색 글자로 변경
+//            $('li').on('click.li', function(event){
+//                $(this).css('color', '#f00');                 
+//            });
+            //$('li').off('click.li');
+            
+            //trversing
+//            $(this)
+//                .find('strong')
+//                    .find('>em').css('color','red')
+//                .end()
+//                .css('font-weight', 'normal')
+//                .end();
+//            
+//            //console.log( $(this).text() );
+//            var $num = $(this).find('em');
+//            $num.text( $num.text()+'0' );
+            
+//            $('button').on('click.button', function(event){
+//               // $('#box').css('left','150px'); 
+//               $('#box').animate({left: '150px'}); //animate는 리터럴 형태로 값을 입력
+//                
+//            });
+            
+            //버튼을 누르면 박스가 이동하며 색상이 변함
+//            $('button')
+//                .eq(0)
+//                    .on('click', function(event){
+//                    $('#box').animate({left: '-=50px', opacity: '-=0.1', 'background-color': '#000'}, 200);
+//            })
+//                .end()
+//                .eq(1)
+//                    .on('click', function(event){
+//                    $('#box').animate({left: '+=50px', opacity: '+=0.1', 'background-color': '#fff'}, 400);
+//            })
+//                .end()
+//                .eq(2)
+//                    .on('click', function(event){
+//                    $('#box').animate({top: '-=50px', opacity: '-=0.1', 'background-color': '#00ff22'}, 200);
+//            })
+//                .end()
+//                .eq(3)
+//                    .on('click', function(event){
+//                    $('#box').animate({top: '+=50px', opacity: '+=0.1', 'background-color': '#0011ff'}, 400);
+//            });
+            
+            $(document).on('keydown', function(event){
+                if(event.which < 37 || 40 < event.which) return;
+                
+                var ani = {left: '+=0px', top: '+=0px', opacity: '+=1', 'background-color': '#f00'};
+                
+                if (event.shiftKey === false){
+                    switch(event.which){
+                        case 37:
+                        ani.left = '-=50px';
+                        break;
+                        case 38:
+                        ani.top = '-=50px';
+                        break;
+                        case 39:
+                        ani.left = '+=50px';
+                        break;
+                        case 40:
+                        ani.top = '+=50px';
+                        break;    
+                    default:
+                        break;
+                    }
+                    $('#box').stop().animate(ani);
+                }else{
+                    switch(event.which){
+                        case 37:
+                        ani.left = '+=50px';
+                        break;
+                        case 38:
+                        ani.top = '+=50px';
+                        break;
+                        case 39:
+                        ani.left = '-=50px';
+                        break;
+                        case 40:
+                        ani.top = '-=50px';
+                        break;    
+                    default:
+                        break;
+                    }
+                    $('#box').stop().animate(ani);
+                };
+            });
+            
+            $('#list input').on('keyup', function(event){
+                if (event.which === 13) { //엔터키 업
+                    event.preventDefault(); //기본 동작 취소
+                    var val = $(this).val(); //입력값 변수에 저장
+                    //if(val === '') return;
+                    if(!val) return;
+                    //$parent.append($child);
+                    //$('#list').append(`<li>${val} <i class="fa fa-trash-o"></i></li>`); //아직 메모리에만 있는 상태
+                    //$child.appendTo($parent);
+                    //$(`<li>${val} <i class="fa fa-trash-o"></i></li>`).appendTo('#list'); //아직 메모리에만 있는 상태
+                    
+                    // 첫 번째 자식 prepend / prependTo
+                    
+                    // 페이지에있는태그.before(그태그앞에넣을태그);
+                    // 그택스앞에넣을태그.insertBefore(페이지에있는태그);
+                    $(this).parent().before(`<li>${val} <i class="fa fa-trash-o"></i></li>`);
+                    $(this).val('');
+                }
+            });
+                $('#list').on('click', 'i.fa', function(event){ //부모함수에 자식함수의 이벤트를 걸어서 사용
+                    $(this).closest('li').remove();    //closest 자신을 포함하여 가장 가까운것을 찾음
+                    //$(this).closest('li').slideUp();    //위로 올려서 안보이게함
+                    //$(this).closest('li').fadeOut();    //색이 옅어지면서 안보이지만 태그에는 남아있음. 디스플레이 논 상태
+                    $(this).closest('li').fadeOut(function(){
+                        $(this).remove();
+                    });
+                });
+        });
+        
+    </script>
+    <style>
+        #box{
+            position: absolute;
+            background: #ff0;
+            border: 2px solid #000;
+            padding: 20px;
+            width: 100px;
+            height: 100px;
+            top: 100px;
+            left: 100px;
+        }
+    
+    </style>
+</head>
+<body>
+<!--    <ul>
+        <li>Item <em>1</em></li>
+        <li>Item <em>2</em></li>
+        <li>Item <em>3</em></li>
+    </ul>
+    <div id='obj'>
+        jQuery Study
+    </div>
+-->
+<!--
+    <button>왼쪽으로</button>
+    <button>오른쪽으로</button>
+    <button>위로</button>
+    <button>아래로</button>
+    <div id="box">안녕하세요</div>
+-->
+    <ul id="list">
+        <li>첫 번째 할 일 <i class="fa fa-trash-o"></i></li>
+        <li><input type="text"></li>
+    </ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

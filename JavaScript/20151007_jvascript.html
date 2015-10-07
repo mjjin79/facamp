@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>20151007_JavaScript</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="스크롤링 애니메이션">
+    <meta name="keywords" content="">
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script>
+        jQuery(function($) {
+            $(window).on('scroll', function(){
+                var index = Math.ceil($(this).scrollTop() / 50);
+                index = index % 8; // 0~7까지 반복적으로 계산
+//                console.log(index);
+                
+                var dist = Math.floor($(this).scrollTop() / 50);
+                $('#runner').css('background-position', (-index*108)+'px 0');
+                $('#runner').css('left', dist +'px')    
+            });
+        });
+    </script>
+    <style>
+        #runner{
+            position: fixed;
+            width: 108px;
+            height: 140px;
+            background: url(runner.png) no-repeat;
+        }
+        
+        #box {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: #f00;
+            top: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <div style="height: 10000px;">
+        <div id="runner"></div>
+        <div id="box"></div>
+    </div>
+    
+
+</body>
+</html>

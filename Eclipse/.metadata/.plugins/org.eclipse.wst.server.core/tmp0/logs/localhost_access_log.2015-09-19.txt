@@ -1,0 +1,5 @@
+127.0.0.1 - - [19/Sep/2015:14:28:46 +0900] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [19/Sep/2015:14:28:47 +0900] "GET /fase_JavaScript_Coding/TestJavaScript.js HTTP/1.1" 200 100
+127.0.0.1 - - [19/Sep/2015:14:29:04 +0900] "GET /fase_JavaScript_Coding/TestJavaScript.js HTTP/1.1" 200 100
+127.0.0.1 - - [19/Sep/2015:14:29:05 +0900] "GET /fase_JavaScript_Coding/TestJavaScript.js HTTP/1.1" 200 100
+127.0.0.1 - - [19/Sep/2015:14:30:35 +0900] "GET /fase_JavaScript_Coding/TestIndex.html HTTP/1.1" 200 248
