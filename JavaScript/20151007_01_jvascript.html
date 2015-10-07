@@ -38,24 +38,41 @@
             
             $('#box').on('mousedown touchstart', function(event) {
                 var top = parseInt($(this).css('top')), left = parseInt($(this).css('left'));
-                var startX = event.pageX, startY = event.pageY;
+                var startX = pageX(event), startY = pageY(event);
 //                console.log(top, left, startX, startY);
                 var $box = $(this); //박스 변수처리. 변수처리를 하지 않으면 이벤트가 발생할때마다 박스를 찾는 비효율적인 동작이 발생
                 
+                console.log(startX, startY);
+                
                 event.preventDefault(); //기본동작 사용안함
                 
-                $(document).on('mousemove.drag touchmove', function(event) { //'mousemove.drag' 이벤트명에 네임스페이스 기능을 사용하여 .drag를 추가 
-                    var dx = event.pageX - startX, dy = event.pageY - startY;
+                $(document).on('mousemove.drag touchmove.drag', function(event) { //'mousemove.drag' 이벤트명에 네임스페이스 기능을 사용하여 .drag를 추가 
+                    var dx = pageX(event) - startX, dy = pageY(event) - startY;
                     var newTop = top + dy, newLeft = left + dx;
                     $box.css({top: newTop, left: newLeft});
                 });
-                $(document).on('mouseup.drag touchend', function(event) {
+                $(document).on('mouseup.drag touchend.drag', function(event) {
 //                    $(this).off('mousemove').off('mouseup'); //이벤트 삭제
-                    $(this).off('mousemove.drag mouseup.drag touchmove touchend'); //위에 문장을 간략하게 쓸수있다.
+                    $(this).off('mousemove.drag mouseup.drag touchmove.drag touchend.drag'); //위에 문장을 간략하게 쓸수있다.
                     
                 });
             });
             
+            function pageX(event) {
+                if(event.pageX) {
+                    return event.pageX;
+                }else{
+                    return event.originalEvent.touches[0].pageX;
+                }
+            }
+            
+            function pageY(event) {
+                if(event.pageY) {
+                    return event.pageY;
+                }else{
+                    return event.originalEvent.touches[0].pageY;
+                }    
+            }
         });        
         /*
         $('#box').show(500);
