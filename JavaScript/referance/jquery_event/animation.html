@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8">
+  <title>애니메이션</title>
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script>
+  jQuery(function($){
+    /*
+    function moveRight() {
+      $('#box').animate({left:'500px'}, moveDown);
+    }
+    function moveDown(){
+      $('#box').animate({top:'200px'}, moveLeft);
+    }
+    function moveLeft(){
+      $('#box').animate({left:'10px'}, moveUp);
+    }
+    function moveUp(){
+      $('#box').animate({top:'10px'}, moveRight);
+    }
+    moveRight();
+    */
+
+    $('button').on('click', function(event){
+      $('#box').stop();
+    });
+
+    $('#box').on('mousedown touchstart', function(event){
+      var top = parseInt($(this).css('top')), left = parseInt($(this).css('left'));
+      var startX = pageX(event), startY = pageY(event);
+      var $box = $(this);
+
+      event.preventDefault();
+
+      $(document).on('mousemove.drag  touchmove.drag', function(event){
+        var dx = pageX(event) - startX, dy = pageY(event) - startY;
+        var newTop = top + dy, newLeft = left + dx;
+        $box.css({top:newTop, left:newLeft});
+      });
+      $(document).on('mouseup.drag  touchend.drag', function(event){
+        $(this).off('mousemove.drag mouseup.drag touchmove.drag touchend.drag');
+      });
+    });
+
+    function pageX(event) {
+      if (event.pageX) {
+        return event.pageX;
+      } else {
+        return event.originalEvent.touches[0].pageX;
+      }
+    }
+    function pageY(event){
+      if (event.pageY) {
+        return event.pageY;
+      } else {
+        return event.originalEvent.touches[0].pageY;
+      }
+    }
+  });
+  </script>
+  <style>
+    #box {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 100px;
+      height: 100px;
+      background: green;
+    }
+    button {
+      position:absolute;
+      top: 120px;
+      left: 120px;
+      font-size:16px;
+    }
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+  <button> 멈추어라​ </button>
+</body>
+</html>

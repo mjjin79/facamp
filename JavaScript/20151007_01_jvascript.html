@@ -36,7 +36,7 @@
             
             
             
-            $('#box').on('mousedown touchstart', function(event) {
+            $('#box').on('mousedown touchstart', function(event) { //모바일 사용을 위해 touch 이벤트를 넣어준다
                 var top = parseInt($(this).css('top')), left = parseInt($(this).css('left'));
                 var startX = pageX(event), startY = pageY(event);
 //                console.log(top, left, startX, startY);
