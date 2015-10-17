@@ -19,4 +19,8 @@ jQuery(function($){
       }
     });
 */
+    
+    $('.items > ul > li > p').on('mouseover', function(event){
+        console.log(event);    
+    });
 });
